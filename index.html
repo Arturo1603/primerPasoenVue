@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <div id="app">
+    </div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    attr: "alt",
+                    img: "https://fastly.picsum.photos/id/967/200/300.jpg?hmac=N516I7nonEwIoem47eN9JDOoQOXjDLqpDz98BaZz3qc"
+            };
+        },
+            //* Nusando las distintas directivas nos permite manipular mejor la relacion no nuestra vista, v-once 
+            //no nos deja reasignarle valores a la variable
+            template: `<img v-bind:[attr]="img" />`
+        }).mount("#app");
+    </script>
+</body>
+
+</html>
